@@ -1,0 +1,25 @@
+.body {
+  margin: 0, 10%;
+
+}
+
+.layoutContainerBottom {
+  display: flex;
+  flex-direction: row;
+  margin: auto, auto;
+  width: 100%;
+  justify-content: center;
+  margin-top: 60px;
+  padding-right: 5%;
+}
+
+.popularDishesAndReviews {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px; 
+}
+
+#Reservations {
+  width: auto;
+  padding-left: 5%;
+}

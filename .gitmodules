@@ -1,0 +1,3 @@
+[submodule "popular-dishes-and-full-menu"]
+	path = popular-dishes-and-full-menu
+	url = https://github.com/YumpSF/popular-dishes-and-full-menu.git

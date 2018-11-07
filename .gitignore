@@ -24,3 +24,8 @@ coverage
 build/
 dist/
 
+popular-dishes-and-full-menu/public/app.js
+overview/public/app.js
+reservation-hours/public/app.js
+Recommended-Reviews-Module/public/app.js
+

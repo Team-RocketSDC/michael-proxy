@@ -10,4 +10,3 @@
 * Run 'npm run build' or script specified in package.json files for every service to create a bundle.js file.
 * Run 'npm start' for every service and the proxy.
 * In a browser navigate to localhost:2001[1-99] to visit the restaurant detail page corresponding to that restaurant.
-*

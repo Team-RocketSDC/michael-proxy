@@ -3,7 +3,6 @@ const morgan = require('morgan');
 const path = require('path');
 const app = express();
 const port = process.env.PORT || 2001;
-var popDishesDb = require('../popular-dishes-and-full-menu/database/index.js');
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");

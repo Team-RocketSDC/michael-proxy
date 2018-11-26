@@ -1,8 +1,17 @@
+require('newrelic');
 const express = require('express');
+const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
+const proxy = require('http-proxy-middleware');
+const compression = require('compression');
 const app = express();
 const port = process.env.PORT || 2001;
+
+app.use(compression());
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -10,13 +19,20 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/:id', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
+app.use(
+  '/api/:id',
+  proxy({
+    target: 'http://localhost:9001',
+    changeOrigin: true
+  })
+);
 
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);

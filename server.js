@@ -29,11 +29,11 @@ app.get('/:id', (req, res) => {
 app.use(
   '/api/:id',
   proxy({
-    target: 'http://localhost:9001',
+    target: 'http://ec2-13-52-96-109.us-west-1.compute.amazonaws.com:8080',
     changeOrigin: true
   })
 );
 
 app.listen(port, () => {
-  console.log(`server running at: http://localhost:${port}`);
+  console.log(`server running at: port: ${port}`);
 });
